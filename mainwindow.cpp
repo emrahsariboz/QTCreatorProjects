@@ -39,7 +39,6 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_guessButton_clicked()
 {
-
     guessNumber = ui -> spinBox ->value();
 
     qDebug() << "The guess number " << QString::number(guessNumber);
@@ -70,8 +69,7 @@ void MainWindow::on_guessButton_clicked()
 void MainWindow::on_startOverButton_clicked()
 {
 
-    ui->messageLabel->setText("starting over!");
-
+    ui->messageLabel->setText("Starting over the game");
     ui->guessButton->setDisabled(false);
     ui->startOverButton->setDisabled(true);
 
