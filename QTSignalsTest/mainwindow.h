@@ -14,11 +14,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-private slots:
-    void changeText();
-
-
 private:
     Ui::MainWindow *ui;
 };

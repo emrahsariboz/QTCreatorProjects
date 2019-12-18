@@ -7,22 +7,14 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //String notation
 
-    /*
-    connect(ui->pushButton, SIGNAL(clicked()),
-            this,SLOT(changeText()));
-            */
+    //connect(ui->horizontalSlider, SIGNAL(valueChanged(int)), ui->progressBar, SLOT(setValue(int)));
 
-    //Second way, regular slots
 
-    //connect(ui->pushButton, &QPushButton::clicked, &MainWindow::changeText);
-
-    //Third way, using lambda function
-
-    connect(ui->pushButton, &QPushButton::clicked, [=](){
-        ui->label->setText("Lambda");
+    connect(ui->horizontalSlider, &QSlider::valueChanged, [=](){
+        ui->progressBar->setValue(ui->horizontalSlider->value());
     });
+
 }
 
 MainWindow::~MainWindow()
@@ -30,11 +22,4 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::changeText()
-{
-
-    qDebug()<<" User clicked on button ";
-    ui->label->setText("Hello There");
-
-}
 
