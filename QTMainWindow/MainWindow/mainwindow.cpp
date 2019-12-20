@@ -36,11 +36,6 @@ MainWindow::MainWindow(QWidget *parent)
     //statusBar()->clearMessage();
 
 
-
-
-
-
-
 }
 
 MainWindow::~MainWindow()
