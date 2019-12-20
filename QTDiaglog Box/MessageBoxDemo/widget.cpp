@@ -40,6 +40,11 @@ Widget::Widget(QWidget *parent)
                                                               "Do you want to do something ?",
                                         QMessageBox::Ok | QMessageBox::Cancel);
         */
+
+        int ret = QMessageBox::information(this, "Message Title","Something happend. "
+                                                              "Do you want to do something ?",
+                                        QMessageBox::Ok | QMessageBox::Cancel);
+
         if(ret == QMessageBox::Ok){
             qDebug()<<"User clicked on OK";
         }else{
