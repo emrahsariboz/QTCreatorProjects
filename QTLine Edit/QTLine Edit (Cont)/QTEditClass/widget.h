@@ -17,5 +17,6 @@ public:
 
 private:
     Ui::Widget *ui;
+    void setUpUI();
 };
 #endif // WIDGET_H

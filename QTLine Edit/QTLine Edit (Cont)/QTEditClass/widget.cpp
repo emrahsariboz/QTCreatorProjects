@@ -12,7 +12,19 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QFont labelFont("Times", 10);
+    setUpUI();
+    setFixedSize(400, 400);
+}
+
+Widget::~Widget()
+{
+    delete ui;
+}
+
+void Widget::setUpUI()
+{
+
+    QFont labelFont("Helvetica [Cronyx]", 18);
     QLabel *mlabel = new QLabel("QTextEdit Signals", this);
     mlabel->setFont(labelFont);
     mlabel->move(100, 25);
@@ -66,10 +78,45 @@ Widget::Widget(QWidget *parent)
      connect(redo, &QPushButton::clicked, [=](){
          textEdit->redo();
      });
-}
 
-Widget::~Widget()
-{
-    delete ui;
+     //Set plain text and html to the text edit
+
+     QPushButton *plainTextButton = new QPushButton("Plain text", this);
+     plainTextButton->setMinimumSize(10, 20);
+     plainTextButton->move(230, 290);
+
+     connect(plainTextButton, &QPushButton::clicked, [=](){
+         textEdit->setPlainText("This is just a plainText");
+     });
+
+
+     QPushButton *setHTML = new QPushButton("Html to Text", this);
+     setHTML->setMinimumSize(10, 20);
+     setHTML->move(70, 320);
+
+     connect(setHTML, &QPushButton::clicked, [=](){
+         textEdit->setHtml("<!DOCTYPE html><html><body><p>This text is normal.</p><p><b>This text is bold.</b></p></body></html>");
+     });
+
+     //Grab text and html
+
+     QPushButton *grabText = new QPushButton("Grab Text", this);
+     grabText->setMinimumSize(10, 20);
+     grabText->move(150, 260);
+
+     connect(grabText, &QPushButton::clicked, [=](){
+          qDebug() <<"The plain text inside the text edi"
+                     "is : " <<textEdit->toPlainText();
+     });
+
+
+     QPushButton *htmlText = new QPushButton("Grab HTML", this);
+     htmlText->setMinimumSize(10, 20);
+     htmlText->move(150, 320);
+
+     connect(htmlText, &QPushButton::clicked, [=](){
+          qDebug() <<"The plain text inside the text edi"
+                     "is : " <<textEdit->toHtml();
+     });
 }
 
