@@ -103,7 +103,6 @@ Widget::Widget(QWidget *parent)
     lastNameLineEdit->setText("Say your last name");
 
     //Hint Text
-
     cityLineEdit->setPlaceholderText("e.g. elazig");
 
 
