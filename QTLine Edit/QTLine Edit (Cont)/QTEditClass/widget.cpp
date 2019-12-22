@@ -35,7 +35,7 @@ void Widget::setUpUI()
 
 
     connect(textEdit, &QTextEdit::textChanged, [=](){
-        qDebug()<<"Text Changed";
+        qDebug()<<"Text is changed!";
     });
 
      QPushButton *copyButton = new QPushButton(this);
@@ -49,7 +49,7 @@ void Widget::setUpUI()
 
      QPushButton *paste = new QPushButton("Paste", this);
      paste->setMinimumSize(10, 20);
-     paste->move(150, 260);
+     paste->move(230, 320);
 
      connect(paste, &QPushButton::clicked, [=](){
          textEdit->paste();
@@ -95,7 +95,7 @@ void Widget::setUpUI()
      setHTML->move(70, 320);
 
      connect(setHTML, &QPushButton::clicked, [=](){
-         textEdit->setHtml("<!DOCTYPE html><html><body><p>This text is normal.</p><p><b>This text is bold.</b></p></body></html>");
+         textEdit->setHtml("<!DOCTYPE html><html><body><p>This text is normal.</p><p><b>ECEM BOLD.</b></p></body></html>");
      });
 
      //Grab text and html
