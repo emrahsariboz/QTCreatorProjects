@@ -95,7 +95,7 @@ public:
 
         addButton->setText(QCoreApplication::translate("Widget", "Add Item", nullptr));
         deleteButton->setText(QCoreApplication::translate("Widget", "Delete Item", nullptr));
-        selectedItemsButton->setText(QCoreApplication::translate("Widget", "PushButton", nullptr));
+        selectedItemsButton->setText(QCoreApplication::translate("Widget", "selectedItems", nullptr));
     } // retranslateUi
 
 };

@@ -20,6 +20,8 @@ private slots:
 
     void on_deleteButton_clicked();
 
+    void on_selectedItemsButton_clicked();
+
 private:
     Ui::Widget *ui;
 };
