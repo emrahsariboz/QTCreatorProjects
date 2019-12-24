@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QDebug>
 #include <QMessageBox>
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,7 +21,8 @@ MainWindow::~MainWindow()
 void MainWindow::on_actionQuit_triggered()
 {
     qDebug()<<"Quitting";
-    QApplication::quit();
+    statusBar()->showMessage("Quiting in 5 seconds");
+    QTimer::singleShot(5000, this, SLOT(quitApp()));
 }
 
 void MainWindow::on_actionCopy_triggered()
@@ -58,4 +60,9 @@ void MainWindow::on_actionAbout_QT_triggered()
 void MainWindow::on_actionCuy_triggered()
 {
     ui->textEdit->cut();
+}
+
+void MainWindow::quitApp()
+{
+    QApplication::quit();
 }

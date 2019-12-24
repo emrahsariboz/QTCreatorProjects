@@ -32,6 +32,8 @@ private slots:
 
     void on_actionCuy_triggered();
 
+    void quitApp();
+
 private:
     Ui::MainWindow *ui;
 };
