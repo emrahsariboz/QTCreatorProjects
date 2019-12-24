@@ -8,7 +8,9 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    ui->listWidget->setSelectionMode(QAbstractItemView::MultiSelection);
+
+
+
 
 }
 

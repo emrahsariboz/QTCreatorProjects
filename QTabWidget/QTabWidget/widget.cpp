@@ -9,33 +9,36 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //Define the widget
-
     QWidget *widget = new QWidget(this);
 
-    //Declare the layout for the weight
+    //Define layout for the widget
+
     QVBoxLayout *layout = new QVBoxLayout();
 
-    layout->addWidget(new QPushButton("Button1" , this));
-    layout->addWidget(new QPushButton("Button2" , this));
-    layout->addWidget(new QPushButton("Button3" , this));
-    layout->addWidget(new QPushButton("Button4" , this));
+    layout->addWidget(new QPushButton("Button1", this));
+    layout->addWidget(new QPushButton("Button2", this));
+    layout->addWidget(new QPushButton("Button3", this));
 
-    QPushButton *button4 = new QPushButton("Button 4", this);
-    connect(button4, &QPushButton::clicked, [=](){
-       qDebug() <<"Button4 from custom tab clicked";
+    QPushButton *button4 = new QPushButton("Button4", this);
+    connect(button4, &QPushButton::clicked, [=](){\
+
+            qDebug() << "Button 4 is clicked";
+
     });
 
     layout->addWidget(button4);
     layout->addSpacerItem(new QSpacerItem(100,200));
 
-    //Set the layout to the widget
+    //Set the layout to the widgt
 
     widget->setLayout(layout);
 
-    //Add the widget to the layout
+    //Add widget to the layout
 
     ui->tabWidget->addTab(widget, "Tab 4");
+
+    //ui->tabWidget->insertTab(1, widget, "Tab 4");
+
 }
 
 Widget::~Widget()
