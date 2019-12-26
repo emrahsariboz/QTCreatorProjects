@@ -15,15 +15,19 @@ public:
     explicit InfoDialog(QWidget *parent = nullptr);
     ~InfoDialog();
 
+    QString getPosition() const;
+
+    QString getFavoriteOS() const;
+
 private slots:
     void on_okButton_clicked();
-
     void on_Cancel_clicked();
 
 private:
     Ui::InfoDialog *ui;
     QString position;
     QString favoriteOS;
+
 };
 
 #endif // INFODIALOG_H

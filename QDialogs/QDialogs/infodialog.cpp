@@ -2,6 +2,7 @@
 #include "ui_infodialog.h"
 #include <QDialog>
 #include <QDebug>
+#include <widget.h>
 InfoDialog::InfoDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::InfoDialog)
@@ -34,10 +35,25 @@ void InfoDialog::on_okButton_clicked()
 
 
 
+    qDebug() <<"The position is :" << getPosition();
+    qDebug() <<"The favorite OS is: " << getFavoriteOS();
+
+
+
 }
+
 
 void InfoDialog::on_Cancel_clicked()
 {
     reject();
+}
 
+QString InfoDialog::getFavoriteOS() const
+{
+    return favoriteOS;
+}
+
+QString InfoDialog::getPosition() const
+{
+    return position;
 }

@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
@@ -20,20 +21,32 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
+    QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout;
     QPushButton *provideInfoButton;
+    QLabel *infoLabel;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(271, 229);
-        horizontalLayout = new QHBoxLayout(Widget);
+        Widget->resize(450, 310);
+        horizontalLayout_2 = new QHBoxLayout(Widget);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         provideInfoButton = new QPushButton(Widget);
         provideInfoButton->setObjectName(QString::fromUtf8("provideInfoButton"));
 
         horizontalLayout->addWidget(provideInfoButton);
+
+        infoLabel = new QLabel(Widget);
+        infoLabel->setObjectName(QString::fromUtf8("infoLabel"));
+
+        horizontalLayout->addWidget(infoLabel);
+
+
+        horizontalLayout_2->addLayout(horizontalLayout);
 
 
         retranslateUi(Widget);
@@ -45,6 +58,7 @@ public:
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
         provideInfoButton->setText(QCoreApplication::translate("Widget", "Provide Info", nullptr));
+        infoLabel->setText(QString());
     } // retranslateUi
 
 };
