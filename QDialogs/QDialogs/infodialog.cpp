@@ -4,7 +4,7 @@
 #include <QDebug>
 #include <widget.h>
 InfoDialog::InfoDialog(QWidget *parent) :
-    QDialog(parent),
+    QDialog(parent, Qt::WindowTitleHint),
     ui(new Ui::InfoDialog)
 {
     ui->setupUi(this);
