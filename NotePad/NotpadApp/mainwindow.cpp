@@ -22,6 +22,7 @@ MainWindow::~MainWindow()
 }
 
 
+
 void MainWindow::on_actionNew_triggered()
 {
      ui->textEdit->setText(QString());
