@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>aboutIcon.png</file>
+        <file>aboutQtIcon.png</file>
+        <file>copyIcon.png</file>
+        <file>cut-fr.png</file>
+        <file>cutIcon.png</file>
+        <file>minions.png</file>
+        <file>pasteIcon.png</file>
+        <file>quitIcon.png</file>
+        <file>redoIcon.png</file>
+        <file>undoIcon.png</file>
+    </qresource>
+</RCC>
