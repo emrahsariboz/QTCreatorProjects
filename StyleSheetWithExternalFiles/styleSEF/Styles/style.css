@@ -1,6 +1,6 @@
 QPushButton[text = "Submit"]{
     color:white;
-    background-color:red;
+    background-color:black;
 }
 
 
@@ -13,3 +13,20 @@ QPushButton#cancelButton{
     color:white;
     background-color:red;
 }
+
+
+QLineEdit{
+    padding:1px;
+    border : 2px solid gray;
+    border-radius :8px;
+    background-color : yellow;
+    height : 30px;
+}
+
+/*#Parent Widget is:"WIDGET".
+//It only effects Widget object.
+*/
+QWidget#Widget > QLabel{
+    font-weight : bold;
+    font-size: 20 px;
+    }
