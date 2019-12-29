@@ -1,0 +1,15 @@
+QPushButton[text = "Submit"]{
+    color:white;
+    background-color:red;
+}
+
+
+QPushButton#okButton{
+    color:white;
+    background-color:green;
+}
+
+QPushButton#cancelButton{
+    color:white;
+    background-color:red;
+}
