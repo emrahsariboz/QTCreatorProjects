@@ -51,7 +51,6 @@ void Widget::on_readButton_clicked()
 void Widget::on_writeToFile_clicked()
 {
     //Save the file to disk
-
     QString fileName = QFileDialog::getSaveFileName(this, "Save As");
 
     if(fileName.isEmpty())
