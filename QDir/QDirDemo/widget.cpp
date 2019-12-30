@@ -61,6 +61,22 @@ void Widget::on_isValidDirButton_clicked()
 void Widget::on_dirorFilebutton_clicked()
 {
 
+     QFileInfo fileInfo(ui->listWidget->currentItem()->text());
+
+     if(fileInfo.isDir()){
+         QMessageBox::information(this, "Message", "This is a dir!");
+     }
+
+     if(fileInfo.isFile()){
+         QMessageBox::information(this, "Message", "This is a file!");
+     }
+
+
+
+}
+
+void Widget::on_folderContentButton_clicked()
+{
     ui->listWidget->clear();
 
     //Check if dir or file
@@ -77,23 +93,17 @@ void Widget::on_dirorFilebutton_clicked()
     QList<QFileInfo> filesList = dir.entryInfoList();
 
     for(int i=0; i<filesList.size(); i++){
-        QString prefix;
-        if(filesList.at(i).isFile()){
-            prefix = "File :";
-        }
+//        QString prefix;
+//        if(filesList.at(i).isFile()){
+//            prefix = "File :";
+//        }
 
-        if(filesList.at(i).isDir()){
-            prefix = "Directory :";
-        }
+//        if(filesList.at(i).isDir()){
+//            prefix = "Directory :";
+//        }
 
-        ui->listWidget->addItem(prefix + filesList.at(i).absoluteFilePath());
+//
+        ui->listWidget->addItem(filesList.at(i).absoluteFilePath());
     }
-
-
-}
-
-void Widget::on_folderContentButton_clicked()
-{
-
 
 }
