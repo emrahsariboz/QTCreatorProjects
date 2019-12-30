@@ -32,9 +32,6 @@ void Widget::on_pushButton_1_clicked()
        ui->pushButton_1->setStyleSheet(css);
    }
 
-
-
-
 }
 
 void Widget::on_pushButton_2_clicked()
@@ -46,7 +43,6 @@ void Widget::on_pushButton_2_clicked()
         QString css = QString("background-color: %1").arg(chosenColor.name());
         ui->pushButton_2->setStyleSheet(css);
     }
-
 
 }
 
