@@ -6,6 +6,8 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    model = new QFileSystemModel(this);
+
 }
 
 Widget::~Widget()
@@ -13,3 +15,8 @@ Widget::~Widget()
     delete ui;
 }
 
+
+void Widget::on_pushButton_clicked()
+{
+
+}
