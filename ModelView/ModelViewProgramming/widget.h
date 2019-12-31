@@ -22,6 +22,6 @@ private slots:
 private:
     Ui::Widget *ui;
     QFileSystemModel *model;
-    QModelIndex *parentIndex;
+    QModelIndex parentIndex;
 };
 #endif // WIDGET_H
