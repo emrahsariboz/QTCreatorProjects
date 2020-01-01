@@ -24,7 +24,6 @@ Widget::Widget(QWidget *parent)
     //Files MOdel
 
     QString path = "D:/";
-
     filesModel = new QFileSystemModel(this);
     filesModel->setFilter(QDir::NoDotAndDotDot | QDir::Files);
     filesModel->setRootPath(path);
