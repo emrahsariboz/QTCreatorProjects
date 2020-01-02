@@ -1,7 +1,7 @@
 #ifndef CUSTOMTABLEMODEL_H
 #define CUSTOMTABLEMODEL_H
 #include <QAbstractItemModel>
-
+#include <QTimer>
 #include <QObject>
 class CustomTableModel : public QAbstractTableModel
 {
@@ -14,6 +14,10 @@ public:
 
     //Controls the data that is shown in each cell
     QVariant data(const QModelIndex &index, int role) const;
+
+
+private:
+    QTimer *timer;
 };
 
 #endif // CUSTOMTABLEMODEL_H

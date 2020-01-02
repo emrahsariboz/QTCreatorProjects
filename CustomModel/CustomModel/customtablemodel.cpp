@@ -1,9 +1,19 @@
 #include "customtablemodel.h"
 #include <QFont>
 #include <QBrush>
+#include <QTime>
 CustomTableModel::CustomTableModel(QObject *parent) : QAbstractTableModel()
 {
+        timer = new QTimer(this);
+        timer->setInterval(1000);
+        connect(timer, &QTimer::timeout, [=](){
+            QModelIndex topLeft = index(0, 0);
 
+            //Notify the view of the change the time in the model
+            emit dataChanged(topLeft, topLeft);
+        });
+
+        timer->start();
 }
 
 int CustomTableModel::rowCount(const QModelIndex &parent) const
@@ -34,6 +44,9 @@ QVariant CustomTableModel::data(const QModelIndex &index, int role) const
         case Qt::DisplayRole:
             if(row == 0 && col == 1) return QString("<-- left");
             if(row == 1 && col == 1) return QString("right-->");
+
+            if(row == 0 && col ==0)
+                return QTime::currentTime().toString();
 
         return QString("Row %1, Col %2")
                 .arg(row)
