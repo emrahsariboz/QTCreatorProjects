@@ -8,6 +8,10 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
 
+
+    ui->tableView->verticalHeader()->hide();
+    ui->tableView->horizontalHeader();
+
     CustomTableModel *model = new CustomTableModel(this);
     ui->tableView->setModel(model);
 }

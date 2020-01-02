@@ -15,6 +15,10 @@ public:
     //Controls the data that is shown in each cell
     QVariant data(const QModelIndex &index, int role) const;
 
+    //Control heder
+
+    QVariant headerData(int section, Qt::Orientation orientation, int role) const;
+
 
 private:
     QTimer *timer;

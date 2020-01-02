@@ -79,3 +79,28 @@ QVariant CustomTableModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
+QVariant CustomTableModel::headerData(int section, Qt::Orientation orientation, int role)const
+{
+           if(role == Qt::DisplayRole){
+
+               if(orientation == Qt::Horizontal){
+                   switch (section) {
+                   case 0:
+                       return QString("First");
+                   case 1:
+                       return QString("Second");
+                   case 2:
+                       return QString("Third");
+
+                   default:
+
+                       break;
+                   }
+               }
+
+           }
+
+           return QVariant();
+
+}
+
