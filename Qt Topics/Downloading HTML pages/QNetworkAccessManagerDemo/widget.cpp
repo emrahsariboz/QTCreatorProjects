@@ -46,6 +46,7 @@ void Widget::dataReadFinished()
     if(netReply->error()){
         qDebug()<<"Something went wrong!";
         qDebug()<<"Error: " << netReply->errorString();
+        qDebug() << QSslSocket::sslLibraryBuildVersionString();
     }else{
         ui->textEdit->setPlainText(QString(*mDataBuffer));
     }
