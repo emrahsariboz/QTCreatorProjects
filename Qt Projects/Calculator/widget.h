@@ -17,5 +17,10 @@ public:
 
 private:
     Ui::Widget *ui;
+
+private slots:
+    void NumPressed();
+    //void MathButtonPressed();
+    //void EqualButtonPressed();
 };
 #endif // WIDGET_H
