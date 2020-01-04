@@ -20,7 +20,8 @@ private:
 
 private slots:
     void NumPressed();
-    //void MathButtonPressed();
-    //void EqualButtonPressed();
+    void MathButtonPressed();
+    void EqualButtonPressed();
+    void clearButtonPressed();
 };
 #endif // WIDGET_H
