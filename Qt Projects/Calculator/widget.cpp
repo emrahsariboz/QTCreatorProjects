@@ -2,16 +2,11 @@
 #include "ui_widget.h"
 #include <QDebug>
 
-
 double calcValue = 0.0;
-
-
 bool divTrigger = false;
 bool multTrigger = false;
 bool addTrigger = false;
 bool subTrigger = false;
-
-
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
